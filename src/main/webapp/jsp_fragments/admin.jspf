@@ -1,0 +1,6 @@
+<%
+
+String vMsg = request.getParameter("vMsg");
+vMsg = vMsg == null ? "" : vMsg;
+
+%>

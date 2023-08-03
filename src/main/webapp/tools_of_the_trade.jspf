@@ -1,0 +1,107 @@
+<div class="text">
+	<p>
+	Google <i>ice cream recipes</i> and you'll get somewhere in the neighborhood of 
+	<a href="javascript:displayDetails('google_hits.jsp')">10s if not 100s</a> of millions 
+	of hits. And if you start clicking through those hits, they all have one 
+	thing in common (well, all of the URLs I clicked through, which is somewhat short 
+	of the 40 million hits Google claimed on that given day).
+	</p>
+	<p>
+	The commonality: the ingredients list almost invariably calls for a cup of this, a half cup 
+	of that, a tablespoon of something else and...well, the common thread is that  
+	ingredients are specified in standard English volumetric measurements&mdash;cups and 
+	tablespoons and fractions thereof.
+	</p>
+	Contrast that with the measurements specified by the, for want of a better 
+	term<a href="javascript: displayDetails('want_of_a_better_term.jsp')">*</a>, the Underbelly class 
+	of recipes<a href="javascript: displayDetails('underbelly_class_of_recipe.jsp')">**</a>.
+	</p>
+	
+	<%@ include file="tools_of_the_trade_slideshow.jspf"    %>
+	 
+	<p>
+	Ingredients are specified in grams, tenths of a gram, hundredths of a gram, and cooking times and temperatures
+	are more precisely defined.
+	</p>
+	<p class="section_head">
+	Specialized Equipment
+	</p>
+	<p>
+	Correctly measuring and preparing these ingredients calls for a couple of items of specialized equipment not 
+	always readily available at the corner food utensil store. Among the consequences of imprecision: a thick, 
+	gummy clump instead of smooth creamy ice cream base.
+	</p>
+	<p class="section_subhead">
+	Scales
+	</p>
+	At least one, preferrably two, digital scales are needed:
+	</p>
+	<ul>
+		<li>A commonly available kitchen scale that measures in ounces and grams up to 11 pounds (4.5 kilograms) for 
+		measuring bulky ingredients like milk, cream, and granulated sugar</li>
+		<li>A more precise scale that measures in at least tenths of a gram (0.1) and preferably 
+		hundredths (0.01 g) for measuring emulsifiers and stablizers, like soy lecithin and locust 
+		bean gum</li>
+	</ul>
+	<p>
+	Fortunately, scales of the both types are readily available at a reasonable cost.
+	</p>
+	<p>
+	Kitchen supply outlets like Bed, Bath and Beyond or Sur le Table only seem to carry the 
+	<a href="javascript:displayDetails('kitchenScale.jsp')">common kitchen scales</a> that measure in whole grams.
+	</p>
+	<p>
+	I was unable to find a more <a href="javascript:displayDetails('medicalScale.jsp')">precise scale</a> at a local brick and mortar outlet, but with a little Googling 
+	I quickly found what I needed online. With shipping, the total cost was a bit over $30.
+	</p>
+	<p class="section_subhead">
+	Immersion Circulator
+	</p>
+	<p>
+	Another divergence between the conventional and the Underbelly class of recipes is the precision 
+	required in warming the ice cream base prior to freezing it. If the recipe uses egg yolk, the base 
+	has to be heated to form a custard. Traditional recipes say something like "cook on low heat until 
+	the mixture coats the back of a spoon."
+	</p>
+	<p>
+	When the recipe specifies one or another or a mix of gums as stabilizers (with or without egg yolk),
+	the type of gum used determines how hot the mixture must be in order for the gum to properly 
+	hydrate. With locust bean gum, as specified in the Underbelly standard bases, the mixture has 
+	to be kept at 170 degrees Fahrenheit for 30 minutes.
+	</p>
+	<p>
+	The best way to ensure the correct temperature is held for the specified time appears to be a 
+	<i>sous vide</i> <a href="javascript:displayDetails('immersion_circulator.jsp')">immersion circulator</a> device. These are also available on-line, though I found 
+	one at a local Target brick and mortar store. 
+	</p>
+	<p class="section_subhead">
+	Ice Cream Machine
+	</p>
+	<p>
+	Well, yes, of course, there's the ice cream machine, a definite requirement.
+	</p>
+	<p>
+	There are several options, all of them researched, tested, and reviewed on another batch of a 
+	<a href="https://www.google.com/search?source=hp&ei=x2SJW8ulFMG0sQW20YPQCw&q=ice+cream+machines&oq=ice+cream+machines&gs_l=psy-ab.3..0l10.1736.5201.0.7509.18.14.0.3.3.0.167.1618.0j11.11.0....0...1c.1.64.psy-ab..4.14.1654...0i131k1.0.S-Wwy_lzoic">
+	gazillion websites</a>, with legions of fans for each of the various choices.
+	</p>
+	<p>
+	My choice: Cuisinart's relatively low-cost, highly rated <a href="javascript:displayDetails('ice-20.jsp')">entry-level machine</a>.
+	</p>
+	<p class="section_subhead">
+	Specialty Ingredients
+	</p>
+	<p>
+	Making ice cream of the <a href="javascript:displayDetails('underbelly_class_of_recipe.jsp')">Underbelly</a> kind requires some specialty 
+	ingredients not found in most home kitchens (at least not in mine), nor in most grocery stores (at least not in my neighborhood). But none of them 
+	are difficult to <a href="javascript:displaySupplemental('./suppliers.jsp')">obtain</a>. 
+	</p>
+	<p>
+	Xanthan gum, guar gum, and soy lecithin are available locally from Harvest House health/organic/bulk foods store. For locust bean gum, 
+	carrageena, and dextrose, I had to go further afield, to the internet. 
+	</p>
+	<p class="section_head">
+	And Now...
+	</p>
+	<a href="forms/recipeSelect.jsp">The Test Kitchen</a>
+</div><!-- 	text -->

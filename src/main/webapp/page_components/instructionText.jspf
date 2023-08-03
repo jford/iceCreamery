@@ -1,0 +1,3 @@
+<div class="instructionTextDiv" id="instructionTextDiv">
+	<p class="instructionText" id="instructionText"></p>
+</div><!-- end instructionTextDiv -->

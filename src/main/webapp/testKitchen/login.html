@@ -1,0 +1,98 @@
+	 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	   
+<html>
+	<head>
+		<title>Ice Creamery Admin Log In</title>
+		<script type="text/javascript" src="../scripts/base_page_header.js"></script>
+		<style>
+			div.login_body_pane
+			{
+				position: absolute;
+				margin-left: 20px;
+				margin-top: 5%;
+				width: 330px;
+			}
+			div.login_input_pane
+			{
+				position: absolute;
+				font-size: .7em;
+				margin-left: 10px;
+				padding-left: 20px;
+				padding-bottom: 10px;
+				margin-bottom: 50px;
+				width: 330px;
+				background-color: #ffffaa;
+			}
+
+			#loginSubmit, #loginCancel
+			{
+				height: 1.8em;
+				width: 7em;
+				font-size: .6em;
+				padding: .3em;
+				padding-top: .1em;
+				padding-bottom: 10px;
+				margin-right: 17px;
+				float: right;
+			}
+			
+			p.body_text
+			{
+				font-size: .7em;
+				margin-left: 20px;
+			}
+			
+			p.section_head
+			{
+			   font-size: 1.2em;
+			   color: #0000CC;
+			   margin-top: 5%;
+			}
+			
+			p.section_subhead
+			{
+			   font-size: 1em;
+			   color: #0000CC;
+			   font-style: italic;
+			   margin-bottom: 0px;
+			   padding-bottom: 0px;
+			}
+			
+			.inline_text_note
+			{
+			   font-size: .7em;
+			   font-family: Arial, Helvetica, sans-serif;
+			   margin-top: 10px;
+			   margin-right: 40px;
+			   padding-bottom: 10px;
+			}
+
+		</style>
+	</head>
+	<body onload="document.getElementById('userName').focus()" />
+		<div class="login_body_pane">
+			<p class="section_head">
+			Enter Admin credentials:
+			</p>
+			<div class="login_input_pane">
+			   <form method="post" action="/iceCreamery/j_security_check" >
+				  <p>
+				  <span>User Id: </span>
+				  <br/>
+				  <input type="text" name="j_username" id="userName" size="35" />
+				  </p>
+				  <p>
+				  <span>Password: </span>
+				  <br/>
+				  <input type="password" name="j_password" size="35" />
+				  </p>
+				  <p>
+				  <button type="button" id="loginCancel" onclick="javascript:document.location.href='../forms/recipeSelect.jsp'">Cancel</button>
+				  <input id="loginSubmit" type="submit" value="Log In" /> 
+				  </p>
+			   </form>
+		   </div> <!-- login_input_pane -->
+		</div> <!-- login_body_pane -->
+	</body>
+</html>

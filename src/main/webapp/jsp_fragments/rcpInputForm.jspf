@@ -1,0 +1,118 @@
+<%@ page import="com.electraink.iceCreamery.testKitchen.datastore.*,com.electraink.iceCreamery.testKitchen.datastore.imageCtl.*,com.electraink.iceCreamery.utilities.*,java.util.*" %>
+
+<%
+	DataMgr dataMgr = new DataMgr();
+	RecipeMgr recipeMgr = new RecipeMgr();
+	IngredientsMgr ingredientsMgr = new IngredientsMgr();
+
+	Recipes recipes = recipeMgr.getRecipes();
+	Ingredients ingredients = ingredientsMgr.getIngredients();
+	
+	String vMsg = request.getParameter("vMsgText");//
+	vMsg = vMsg == null ? "" : vMsg;
+	
+	String rcpId = request.getParameter("rcpId");
+	rcpId = rcpId == null ? "" : rcpId;
+	
+	String slctdRcpNmIdxStr = request.getParameter("rcpNmSelectedIndex");
+	slctdRcpNmIdxStr = slctdRcpNmIdxStr == null ? "0" : slctdRcpNmIdxStr;
+	int slctdRcpNmIdx = Integer.parseInt(slctdRcpNmIdxStr);
+	
+	String ckMthdIdxStr = request.getParameter("cookMethodSelectedIndex");
+	ckMthdIdxStr = ckMthdIdxStr == null ? "0" : ckMthdIdxStr;
+	int ckMthdIdx = Integer.parseInt(ckMthdIdxStr);
+	
+	String recipeByName = "";
+	if(rcpId != null && rcpId.equals(DataMgr.defaultSelectId))
+		recipeByName = DataMgr.defaultSelectOption;
+// 	else if(rcpId != null)
+// 		recipeByName = dataMgr.getRecipe(rcpId).getRecipeName();
+	
+	/* arguments for hrefTags(): 
+	 * 	 arg[0] == type
+     *   arg[1] == displayName
+     *   arg[2] == array of url arg key/value pairs; String[] args = {"key1=value1", "key2=value2"...} 
+     *             (getIngEditorHref() adds )
+	 */
+	HrefTags hrefTags = new HrefTags();
+    String[] hrefArgs = { "" }; 
+    String hrefFlavorings = "";
+    String hrefDairy = "";
+    String hrefEmuls = "";
+    String hrefSalts = "";
+    String hrefStabs = "";
+    String hrefSwts = "";
+
+    String[][] ingNameMap = dataMgr.getIngNameMap();
+	for(int i = 0; i < ingNameMap.length; i++)
+	{
+		if(ingNameMap[i][1].equals("flavoring"))
+		{
+			hrefFlavorings = hrefTags.getIngEditorHref("flavoring", ingNameMap[i][0], hrefArgs);
+		}
+		else if(ingNameMap[i][1].equals("dairytype"))
+		{
+			hrefDairy = hrefTags.getIngEditorHref("dairyType", ingNameMap[i][0], hrefArgs);
+		}
+		else if(ingNameMap[i][1].equals("emulsifier"))
+		{
+			hrefEmuls = hrefTags.getIngEditorHref("emulsifier", ingNameMap[i][0], hrefArgs);
+		}
+		else if(ingNameMap[i][1].equals("salt"))
+		{
+			hrefSalts = hrefTags.getIngEditorHref("salt", ingNameMap[i][0], hrefArgs);
+		}
+		else if(ingNameMap[i][1].equals("stabilizer"))
+		{
+			hrefStabs = hrefTags.getIngEditorHref("stabilizer", ingNameMap[i][0], hrefArgs);
+		}
+		else if(ingNameMap[i][1].equals("sweetener"))
+		{
+			hrefSwts = hrefTags.getIngEditorHref("sweetener", ingNameMap[i][0], hrefArgs);
+		}
+	}
+	
+	String slctMnuName = "recipeByNameSlct";
+	String slctMnuId = "recipeByNameSlct";
+	String onchangeVal = "showHideSbmtEdsBtnDiv('show')";
+//	String rcpSlctMnu = dataMgr.getRcpSlctMnu(slctMnuName, slctMnuId, onchangeVal, "", slctdRcpNmIdx, false);
+//    public String getSlctMnu(String selectName, String selectId, String ingType, String onchange, int slctdIdx, boolean filtered)
+	String rcpSlctMnu = dataMgr.getSlctMnu(slctMnuName, slctMnuId, "", onchangeVal, slctdRcpNmIdx, false);
+	
+	String ckMthdMnuName = "cookMethodSlct";
+	String ckMthdMnuId = "cookMethodSlct";
+	String ckMthdMnu = dataMgr.getSlctMnu(ckMthdMnuName, ckMthdMnuId, "", "", ckMthdIdx, false);
+	
+	String flavsSlctTable = "";
+	String dairySlctTable = "";
+	String emulsSlctTable = "";
+	String saltsSlctTable = "";
+	String stabsSlctTable = "";
+	String swtsSlctTable = "";
+	
+	String rcpNameVal = "";
+	String domFlavVal = "";	
+	String ckTimeVal = "";
+	String ckTempVal = "";
+	String commentVal = "";
+	String scoreVal = "";
+	String captionVal = "";
+	
+	if(!rcpId.isEmpty() && recipeMgr.getRecipe(rcpId) != null)
+	{
+		flavsSlctTable = dataMgr.getIngSlctTbl("flavoring", rcpId, true);
+		dairySlctTable = dataMgr.getIngSlctTbl("dairyType", rcpId, true);
+		emulsSlctTable = dataMgr.getIngSlctTbl("emulsifier", rcpId, true);
+		saltsSlctTable = dataMgr.getIngSlctTbl("salt", rcpId, true);
+		stabsSlctTable = dataMgr.getIngSlctTbl("stabilizer", rcpId, true);
+		swtsSlctTable = dataMgr.getIngSlctTbl("sweetener", rcpId, true);
+
+		rcpNameVal = recipeMgr.getRecipe(rcpId, true).getRecipeName();
+		domFlavVal = recipeMgr.getRecipe(rcpId, true).getDomFlavor();
+		ckTimeVal = recipeMgr.getRecipe(rcpId, true).getCookTemp();
+		ckTempVal = recipeMgr.getRecipe(rcpId, true).getCookTemp();
+		commentVal = recipeMgr.getRecipe(rcpId, true).getComments();
+		scoreVal = recipeMgr.getRecipe(rcpId, true).getScoreStr();
+		captionVal = recipeMgr.getRecipe(rcpId, true).getCaption();
+}
+%>

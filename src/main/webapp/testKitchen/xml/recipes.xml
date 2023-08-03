@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iceCreamery>
+    <recipes>
+        <recipe cookmethod="" cooktemp="an unspecified temperature" cooktime="an unspecified amount of time" dateofentry="Thu Jan 12 17:54:35 PST 2023" id="2w58ya6l35e248z0" score="Unrated">
+            <name><![CDATA[bubblegum]]></name>
+        </recipe>
+        <recipe cookmethod="" cooktemp="an unspecified temperature" cooktime="an unspecified amount of time" dateofentry="Thu Jan 12 17:55:25 PST 2023" id="1qymfz1d8m6ilszb" score="Unrated">
+            <name><![CDATA[sour grape]]></name>
+        </recipe>
+    </recipes>
+</iceCreamery>

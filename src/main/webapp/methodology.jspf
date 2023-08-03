@@ -1,0 +1,76 @@
+		<div class="text">
+			<p class="section_head">
+			<p>
+			I'll be using the <a href="javascript:displayDetails('underbelly_class_of_recipe.jsp')">Underbelly</a> 
+			<a href="https://underbelly-nyc.blogspot.com/2016/05/basic-ice-cream-recipe-examples.html">Standard Base</a> 
+			as the launching pad for much of my experimentation.
+			</p>
+			<p>
+			Actually, I will be using two versions of the Underbelly base: There is the Standard Base, which calls for 
+			two egg yolks per liter of ice cream, and a Light Variation that uses 4.5 grams of 
+			<a href="javascript:displayDetails('lecithin.jsp')">lecithin</a> instead of the 
+			egg yolks. (There is a third version of the standard base, the French Variation, that calls for 6 egg yolks per liter 
+			of ice cream, but I won't be using that variation, at least not now. Maybe later?) 
+			</p>
+			<p class="section_head">
+			Ingredient Quantities
+			</p>
+			<p>
+			The ingredient quantities in the Underbelly recipes produce a liter of ice cream (roughly one quart).  
+			</p>
+			<p>
+			However, I prefer to make smaller batches while testing, so I plan to reduce all ingredients by half when 
+			developing a batch for testing. Instead of the liter produced by the Underbelly recipes, I'll make test batches  
+			of 500ml (about a pint) of ice cream.
+			</p>
+			<p class="section_head">
+			Why Two Base Recipes?
+			</p>
+			<p>
+			Ice cream recipes are often divided into two groups: 1) with and 2) without egg yolks. (And the <i>with</i> group can 
+			be subdivided according to how many yolks are used for a given quantity of end product). But simply not putting egg yolk 
+			into the base&mdash;as is often the case in basic, or starter, or beginnner recipes, such as those that come with 
+			ice-cream-machine recipe books (also known as Philadelphia, or New York, or simply American, as opposed to French, style 
+			ice cream)&mdash;comes at a cost. Egg yolk is an emulsifier and a stabilizer, an ingredient that adds 
+			to taste, scoopability, and overall experience of eating ice cream. 
+			</p>
+			<p>
+			For best results, when egg yolk is taken out of the mix, something else should be added, to achieve 
+			those results that can be ascribed to the egg yolk.
+			</p>
+			<p>
+			What to add? That is one of the questions at issue for this blog.
+			</p>
+			<p>
+			Underbelly's standard base calls for 2 egg yolks per liter of ice cream; the <i>light</i> 
+			variation substitutes 4.5 grams of lecithin for the egg yolks.
+			</p>
+			<p>
+			That's one answer. But is it <i>the</i> answer? Well, first of all, there's this...
+			</p>
+			<p class="section_head">
+			Lecithin???
+			</p>
+			<p>
+			Yes, lecithin. Oooh! Better living through <a href="javascript:displayDetails('want_of_a_better_term.jsp')">chemistry</a>? 
+			But...what is it?
+			</p>
+			<p class="section_subhead">
+			Short Answer
+			</p>
+			<p>It's the <a href="javascript:displayDetails('lecithin.jsp')">fat compound</a> in egg yolks that makes 
+			them so useful to ice cream making. But it can be found elsewhere, as well, such as soy beans, from which 
+			it can be extracted and used in place of egg yolk. Lecithin derived from soy beans (known, conveniently, 
+			as <i>soy lecithin</i>) is what I'll be using, at least initially.
+			</p>
+			<p class="section_subhead">
+			Long answer
+			</p>
+			<p>
+			Read all about it on the <a href="javascript:displaySupplemental('acknowledgements.jsp')">internet</a>. Also, <a href="https://en.wikipedia.org/wiki/Lecithin">Wikipedia</a>.
+			</p>
+			<p class="section_head">
+			Next:
+			</p>
+			<a href="tools_of_the_trade.jsp">Tools of the Trade</a>
+		</div><!-- text -->   

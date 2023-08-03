@@ -1,0 +1,81 @@
+<%
+	// subdirectory under images where pics in slideshow are stored
+	String imageDir = "tools";
+%>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Image List follows: -->
+  
+  <%
+  	String[][] slideList = 
+		{
+			{
+				"tools.jpg", "A few speciality items are needed."
+			},
+			{
+				"gramScales.jpg", "Scales measuring in ounces and grams are useful for some " +	
+				"ingredients. (For details, click <a class=\"details_link\" href=\"javascript:displayDetails('kitchenScale.jsp')\">here</a>.)"
+			},
+			{
+				"precision_scales.jpg", "Emulsifiers and stabilizers require more precision. (For details, click " +
+				"<a class=\"details_link\" href=\"javascript:displayDetails('medicalScale.jsp')\">here</a>.)"
+			},
+			{
+				"immersion_circulator.jpg", "An immersion circulator controls temperature and timing. (For details, click " +
+						"<a class=\"details_link\" href=\"javascript:displayDetails('immersion_circulator.jsp')\">here</a>.)"
+			},
+			{
+				"ice_cream_machine.jpg", "The Cuisinart ICE-20 ice cream machine.(For details, click " + 
+				"<a class=\"details_link\" href=\"javascript:displayDetails('ice-20.jsp')\">here</a>.)"
+			}
+		};
+  
+  	int picCount = slideList.length;
+	String numPics = Integer.toString(picCount);
+
+	int picNum = 0; // used as ptr into 0-indexed array
+  	String displayNum = "";
+  	while(picNum < picCount)
+  	{
+  		displayNum = Integer.toString(picNum + 1);
+  %>
+  		<div class="mySlides fade">
+			<div class="numbertext"><%= displayNum %> / <%= numPics %></div><!--  numberText -->
+			<img src="images/<%= imageDir %>/<%= slideList[picNum][0] %>">
+			<div class="captionText"><%= slideList[picNum][1] %></div><!--  captionText -->
+		</div><!-- mySlides -->
+  <%
+  		picNum++;
+  	}
+  %>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div> <!-- slideshow-container -->
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+
+<%
+	picNum = 1; // used this time as on-screen counter; start at 1
+	while(picNum <= picCount)
+	{
+%>
+		<span class="dot" onclick="currentSlide(<%= Integer.toString(picNum++) %>)"></span>
+<%
+	} // while(picNum <= numPics)
+%>
+
+<!-- <span class="dot" onclick="currentSlide(1)"></span> -->  
+<!--   <span class="dot" onclick="currentSlide(2)"></span> -->  
+<!--   <span class="dot" onclick="currentSlide(3)"></span> -->  
+</div> 
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+</script>

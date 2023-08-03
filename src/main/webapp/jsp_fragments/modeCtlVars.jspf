@@ -1,0 +1,36 @@
+<%
+	String mode = request.getParameter("mode");
+	mode = mode == null ? "" : mode;
+	
+	String addBtnState = "";
+	String editBtnState = "";
+	String deleteBtnState = "";
+	
+	if(!mode.isEmpty())
+	{
+		if(mode.compareTo("add") == 0)
+		{
+			addBtnState = "checked";
+			editBtnState = "";
+			deleteBtnState = "";
+		}
+		else if(mode.compareTo("edit") == 0)
+		{
+			addBtnState = "";
+			editBtnState = "checked";
+			deleteBtnState = "";
+		}
+		else if(mode.compareTo("delete") == 0)
+		{
+			addBtnState = "";
+			editBtnState = "";
+			deleteBtnState = "checked";
+		}
+	}
+	else
+	{
+		addBtnState = "";
+		editBtnState = "";
+		deleteBtnState  = "";
+	}
+%>

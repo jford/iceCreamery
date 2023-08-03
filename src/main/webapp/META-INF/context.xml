@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+   <Realm className="org.apache.catalina.realm.JAASRealm"
+          appName="IceCreameryLogin"
+		  userClassNames="com.electraink.iceCreamery.testKitchen.jaas.UserPrincipal"
+		  roleClassNames="com.electraink.iceCreamery.testKitchen.jaas.RolePrincipal" />
+</Context>

@@ -1,0 +1,33 @@
+.dataCategory
+{
+	vertical-align: top;
+	padding-top: 3%;
+}
+
+.recipeInput
+{
+	color: black;
+}
+
+div.imageAddCtrls
+{
+	display: block;
+}
+
+div.imageRemoveCtrls
+{
+	display: none;
+}
+
+div.recipeImageCtrls
+{
+	display: none;
+}
+.enumData
+{
+	font-size: .8em;
+    vertical-align: top;
+    padding-top: 1%;
+    padding-bottom: 1%";
+}
+

@@ -1,0 +1,97 @@
+<%@ page import="com.electraink.iceCreamery.testKitchen.datastore.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.imageCtl.*,
+                 com.electraink.iceCreamery.utilities.*,
+                 java.util.*,
+                 java.io.*" %>
+
+<%
+DataMgr dataMgr = new DataMgr();
+Properties props = Utilities.loadProperties(DataMgr.propertiesFile);
+// button value strings
+String getText = props.getProperty("xmlEdit");
+String clrForm = props.getProperty("clrForm");
+
+String editScope = request.getParameter("editScope");
+editScope = editScope == null ? "" : editScope;
+
+String editTxt = request.getParameter("editTxt");
+editTxt = editTxt == null ? "" : editTxt;
+
+String recipeByName = request.getParameter("recipeByName");
+recipeByName = recipeByName == null ? "(Select)" : recipeByName;
+
+String vMsg = request.getParameter("vMsg");
+vMsg = vMsg == null ? "" : vMsg;
+
+String allRcpsCkd = "";
+String rcpByNmCkd = "";
+String allIngsCkd = "";
+String ingByNmCkd = "";
+String dryCkd = "";
+String emulsCkd = "";
+String flvsCkd = "";
+String saltsCkd = "";
+String stabsCkd = "";
+String swtsCkd ="";
+
+switch(editScope)
+{
+case "allRcpsCkd":
+     allRcpsCkd = "checked";
+case "allIngsCkd":
+ 	 allIngsCkd = "checked";
+	 break;
+case "rcpByNmCkd":
+	break;
+case "ingByNmCkd":
+	break;
+case "dryCkd":
+	dryCkd = "checked";
+	break;
+case "emulsCkd":
+	emulsCkd = "checked";
+	break;
+case "flvsCkd":
+	flvsCkd = "checked";
+	break;
+case "saltsCkd":
+	saltsCkd = "checked";
+	break;
+case "stabsCkd":
+	stabsCkd = "checked";
+	break;
+case "swtsCkd":
+	swtsCkd = "checked";
+	break;
+}
+
+if(!editTxt.isEmpty())
+{
+	try
+	{
+		editTxt = Utilities.read_file(DataMgr.getPathToXml() + editTxt);
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+String onchange="enableGetTextBtn();";
+String rcpSlctMnu = dataMgr.getRcpSlctMnu("recipeByName", "recipeByName", onchange, 0, false);
+String ingSlctMnu = dataMgr.getIngSlctMnu("ingByName", "ingByName", onchange, 0, false);
+
+System.out.println("\nrecipes:\n\n" + rcpSlctMnu);
+System.out.println("\ningredients:\n\n" + ingSlctMnu);
+
+String allRcpsScope = DataMgr.xmlEditScopes[0];
+String allIngsScope = DataMgr.xmlEditScopes[1];
+String rcpByNmScope = DataMgr.xmlEditScopes[2];
+String ingByNmScope = DataMgr.xmlEditScopes[3];
+String allDryScope = DataMgr.xmlEditScopes[4];
+String allEmulsScope = DataMgr.xmlEditScopes[5];
+String allFlvsScope = DataMgr.xmlEditScopes[6];
+String allSaltsScope = DataMgr.xmlEditScopes[7];
+String allStabsScope = DataMgr.xmlEditScopes[8];
+String allSwtsScope = DataMgr.xmlEditScopes[9];
+
+%>

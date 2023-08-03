@@ -1,0 +1,206 @@
+#showDetailsButton
+{
+	height: 2em;
+	width: 8em; 
+	font-size: .8em;
+	padding-left: .2em;
+	background-color: #ffffcc;
+}
+
+#smallSubmitButton
+{
+	height:  2em;
+	font-size: .6em;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.dataCategory
+{
+	color: black;
+	font-size: 1em;
+	font-weight: bold;
+	padding-top: 3%;
+}
+
+a.details_link:link    
+{
+	color: lightgreen;
+	text-decoration: none;
+}
+
+a.details_link:visited 
+{
+	color: lightgreen;
+	text-decoration: none;
+}
+
+a.details_link:hover
+{
+	color: red;
+	text-decoration: none;
+}
+
+div.cloneRecipe
+{
+	display: none;
+}
+
+div.filterBox
+{
+	width: 85%;
+	border: 2px solid blue;
+	margin-top: 10px;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+div.getRecipeForEditBtn
+{
+	display: none;
+}
+
+div.imgCaption
+{
+	margin-top: 1%;
+	font-size: .8em;
+	font-style: italic;
+}
+
+div.ingredient
+{
+	display: table-cell;
+	width: 150px;
+}
+
+div.ingredientCategory
+{
+	font-size: .9em;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+div.ingredientListing
+{
+	display: table-row;
+	font-weight: normal;
+	width: 100%;
+}
+
+div.quantity
+{
+	display: table-cell;
+	/*
+	width: 100px;
+	*/
+}
+
+div.recipeComments
+{
+	display: block;	
+}
+
+p.recipeDisplayGroupName
+{
+/*	font-size: 1em; */
+	font-weight: bold;
+}
+
+div.recipeDisplayTable
+{
+	margin-top: -20px;
+	font-size: 1em;
+/*	
+	border: 1px solid red;
+*/
+}
+
+div.recipeIngredients
+{
+	display: block;
+}
+
+div.recipeInstructions
+{
+	display: block;
+}
+
+div.recipeNameInput
+{
+	display: block;
+}
+
+div.recipeNameSelect
+{
+	display: none;
+}
+
+div.send_back
+{
+	left: 70%; 
+}
+
+div.text_note
+{
+	border-top: 5px solid lightgrey;
+	border-bottom: 5px solid lightgrey;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 90%;
+}
+
+div.vMsgBox
+{
+	border: 5px solid red; 
+    display: none; 
+	margin-top: 20px;
+}
+
+ol
+{
+	color: black;
+}
+
+p.note_text
+{
+	font-family: Helvetica, sans-serif;
+	font-size: .8em;
+	margin-left: 15px;	
+}
+
+p.vMsgHead::after
+{
+/*	content: document.getElementById("vMsgText").value;*/
+}
+
+td.recipeInputForm
+{
+	vertical-align: top;
+}
+
+textarea.vMsgText
+{
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	resize: none;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow: hidden;
+	border: 0;
+}
+
+td.dataItemLabel
+{
+	color: black;
+	font-size: .9em;
+}
+td.dataItemIput
+{
+	
+}
+

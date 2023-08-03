@@ -1,0 +1,80 @@
+<%@ page import="java.lang.Integer,
+                 java.util.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.dairy.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.emulsifiers.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.flavors.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.salts.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.stabilizers.*,
+                 com.electraink.iceCreamery.testKitchen.datastore.sweeteners.*,
+                 com.electraink.iceCreamery.utilities.*"%>
+
+<%
+	DataMgr dataMgr = new DataMgr();
+
+	String recipeName = request.getParameter("recipeName");
+
+	RecipeMgr recipeMgr = new RecipeMgr();
+	Recipe recipe = recipeMgr.getRecipe(recipeName);  // recipe null if recipeName not valid
+	
+	String caption = "";
+	String comments = "";
+	String imageFilename = "";
+	String ingredientsSxnHd = "Ingredients";
+	String ingredientsTable = "";
+	String recipeType = "";
+	String recipeTypeDisplayName = "";
+	String instructions = "";
+	String score = "";
+	String vMsgText = "";
+	
+	if(recipe != null)
+	{
+		String colSeparator = "###";
+		Vector<String> tableData = dataMgr.getTableDataForRecipe(recipeName, colSeparator, true);
+		comments = recipe.getComments();
+		instructions = recipe.getInstructions();
+		
+		// if no ingredients, tableData will be empty; no point in showing 
+		// anything other than comments and instructions if there is no recipe
+		if(tableData.size() > 0)
+		{
+			ingredientsTable = dataMgr.getTableForRecipe(tableData, colSeparator, false);
+			score = recipe.getScoreStr();
+			caption = recipe.getCaption();
+			imageFilename = recipe.getImageFilename();
+			recipeType = recipe.getType();
+			recipeTypeDisplayName = DataMgr.getRecipeTypeDisplayName(recipeType);
+		}
+		else
+			ingredientsTable = "<br/>Recipe contains no ingredients.";
+			// recipeDisplayTable style puts top margin at -5 so
+			// <table>... </table> will display correctly; if no table, 
+			// text needs <br/> to make up the table offset
+		
+		Vector<String[]> ingsList = recipe.getIngredientsList();
+		Iterator<String[]> iIngs = ingsList.iterator();
+		while(iIngs.hasNext())
+		{
+			String[] ing = iIngs.next();
+			String rcpId = ing[3];
+			String[] validationItem = dataMgr.validateIng(rcpId);
+			String[] ingItem = dataMgr.updateValidatedIngItem(validationItem, ing[1], ing[0]);
+			if(ingItem[0].isEmpty())
+			{
+				vMsgText += "The " + ing[0] + " \"" + ing[1] + "\" is no longer available in the recipe editor. \n";
+			}
+			else if(!ingItem[0].equals(ing[1]))
+				vMsgText += "The " + ing[0] + " \"" + validationItem[0] + "\" was originally listed as \"" + ing[1]  + "\" in the recipe editor.\n";
+		}
+	}
+	if(!recipeType.isEmpty() || recipe != null && recipe.hasScore())
+	{
+		if(recipeType.length() > 0)
+ 			recipeType = "Recipe Type: <span style=\"font-weight: normal\">" + recipeTypeDisplayName + "</span>";
+		if(score.length() > 0)
+			score = "Score: <span style=\"font-weight: normal\">" + score + "</span>";
+	}			
+%>
+
+    

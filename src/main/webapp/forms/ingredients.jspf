@@ -1,0 +1,92 @@
+<%@ page import="com.electraink.iceCreamery.testKitchen.datastore.*"%>
+
+<%
+
+	RecipeMgr recipeMgr = new RecipeMgr();
+
+	// lists of all enums defined in datastore
+	 String[] cookMethods = recipeMgr.dataMgr.getEnumList("cookMethodDef");
+	 String[] dairy = recipeMgr.dataMgr.getEnumList("dairyTypeDef");
+	 String[] emulsifiers = recipeMgr.dataMgr.getEnumList("emulsifierDef");
+	 String[] flavorTypes = recipeMgr.dataMgr.getEnumList("flavorTypeDef");
+	 String[] salts = recipeMgr.dataMgr.getEnumList("saltDef");
+	 String[] stabilizers = recipeMgr.dataMgr.getEnumList("stabilizerDef");
+	 String[] sweeteners = recipeMgr.dataMgr.getEnumList("sweetenerDef");
+	 
+	// counts of all enums defined in datastore
+	int numCookMethods = cookMethods.length;
+	int numDairy = dairy.length;
+	int numFlavs = flavorTypes.length;
+	int numEmuls = emulsifiers.length;
+	int numSalts = salts.length;
+	int numStabs = stabilizers.length;
+	int numSweets = sweeteners.length;
+
+	
+	// arrays to hold enum values as strings, for displaying the web page
+	String[][] cookMethodNames = new String[numCookMethods][2];
+			
+	String[][] dairyNames = new String[numDairy][2];
+	String[][] flavorNames = new String[numFlavs][2];
+	String[][] emulsNames = new String[numEmuls][2];
+	String[][] saltsNames = new String[numSalts][2];
+	String[][] stabsNames = new String[numStabs][2];
+	String[][] sweetsNames = new String[numSweets][2];
+	
+	// load cookMethods[] with values;
+	int count = 0;
+	while(count < numCookMethods)
+	{
+		cookMethodNames[count][0] = numCookMethods == 0 ? "" : cookMethods[count].toString();
+		cookMethodNames[count][1] = numCookMethods == 0 ? "" : recipeMgr.dataMgr.getCookMethodName(cookMethods[count++]);
+	}
+
+	
+	// load dairyNames[][] with values
+	count = 0;
+	while(count < numDairy)
+	{
+		dairyNames[count][0] = numDairy == 0 ? "" : dairy[count].toString();
+		dairyNames[count][1] = numDairy == 0 ? "" : recipeMgr.dataMgr.getDairyTypeName(dairy[count++]);
+	}
+	
+	// load flavorNames[][] with values
+	count = 0;
+	while(count < numFlavs)
+	{
+		flavorNames[count][0] = numFlavs == 0 ? "" : flavorTypes[count].toString();
+		flavorNames[count][1] = numFlavs == 0 ? "" : recipeMgr.dataMgr.getFlavorTypeName(flavorTypes[count++]);
+	}
+	
+	// load emulsNames[][] with values
+	count = 0;
+	while(count < numEmuls)
+	{
+		emulsNames[count][0] = numEmuls == 0 ? "" : emulsifiers[count].toString();
+		emulsNames[count][1] = numEmuls == 0 ? "" : recipeMgr.dataMgr.getEmulsifierName(emulsifiers[count++]);
+	}
+	
+	// load saltsNames[][] with values
+	count = 0;
+	while(count < numSalts)
+	{
+		saltsNames[count][0] = numSalts == 0 ? "" : salts[count].toString();
+		saltsNames[count][1] = numSalts == 0 ? "" : recipeMgr.dataMgr.getSaltName(salts[count++]);
+	}
+	
+	// load stabsNames[][] with values
+	count = 0;
+	while(count < numStabs)
+	{
+		stabsNames[count][0] = numStabs == 0 ? "" : stabilizers[count].toString();
+		stabsNames[count][1] = numEmuls == 0 ? "" : recipeMgr.dataMgr.getStabilizerName(stabilizers[count++]);
+	}
+	
+	// load sweetsNames[][] with values
+	count = 0;
+	while(count < numSweets)
+	{
+		sweetsNames[count][0] = numSweets == 0 ? "" : sweeteners[count].toString();
+		sweetsNames[count][1] = numSweets == 0 ? "" : recipeMgr.dataMgr.getSweetenerName(sweeteners[count++]);
+	}
+%>

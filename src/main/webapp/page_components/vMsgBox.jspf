@@ -1,0 +1,4 @@
+<div class="vMsgBox" id="vMsgBox">
+    <span class="closeMsgBoxLabel"><a href="javascript:clearMsgBox()">X</a></span>
+    <textarea class="vMsgText" name="vMsgText" id="vMsgText"><%= vMsg %></textarea>
+</div><!-- end vMsgBox div -->

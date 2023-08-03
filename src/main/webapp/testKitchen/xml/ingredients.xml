@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iceCreamery>
+    <ingredients>
+        <dairyTypes/>
+        <flavorings>
+            <ingredient id="e5jl34ihgc6djdi2" qty="" type="flavoring">
+                <ingName><![CDATA[flav 2]]></ingName>
+            </ingredient>
+            <ingredient id="48eqeh60gx4polv7" qty="" type="flavoring">
+                <ingName><![CDATA[flav 3]]></ingName>
+            </ingredient>
+            <ingredient id="v0v3kj51836rzkgr" qty="" type="flavoring">
+                <ingName><![CDATA[flav 4]]></ingName>
+            </ingredient>
+            <ingredient id="4zf0x78dnva4qr4e" qty="" type="flavoring">
+                <ingName><![CDATA[flav 5]]></ingName>
+            </ingredient>
+            <ingredient id="zy2r04e4832oo0e8" qty="" type="flavoring">
+                <ingName><![CDATA[flav 1]]></ingName>
+            </ingredient>
+        </flavorings>
+        <emulsifiers/>
+        <salts/>
+        <stabilizers/>
+        <sweeteners/>
+    </ingredients>
+    <suppliers>
+        <supplier id="1234" splrTelephone="123-4567">
+            <splrContact><![CDATA[bo diddley]]></splrContact>
+            <splrName><![CDATA[bo's botique]]></splrName>
+            <splrNotes><![CDATA[yowza!]]></splrNotes>
+        </supplier>
+    </suppliers>
+</iceCreamery>

@@ -1,0 +1,50 @@
+<%@ page import="java.lang.Integer,
+                java.util.*,
+                com.electraink.iceCreamery.testKitchen.datastore.*,
+                com.electraink.iceCreamery.utilities.*"%>
+
+<%
+	Vector<String> recipeNames;
+	
+	String vMsg = request.getParameter("vMsgText");
+
+	vMsg = vMsg == null || vMsg.compareTo("null") == 0 ? "" : vMsg;
+	
+	String ckMthdIdxStr = request.getParameter("cookMethodSelectedIndex");
+	ckMthdIdxStr = ckMthdIdxStr == null ? "0" : ckMthdIdxStr;
+	int ckMthdIdx = Integer.parseInt(ckMthdIdxStr);
+	
+// 	if(vMsgText != null && !vMsgText.isEmpty())
+// 		recipeNames = recipeMgr.getFilteredRecipeNames();
+// 	else
+// 		recipeNames = recipeMgr.getRecipeNames();
+// 	Iterator<String> iRecipeNames = recipeNames.iterator();
+
+// 	String flavsSlctTable = dataMgr.getIngSlctTbl(flavorNames, "flvsSlct", "", false);
+// 	String dairySlctTable = dataMgr.getIngSlctTbl(dairyNames, "dairySlct", "", false);
+// 	String emulsSlctTable = dataMgr.getIngSlctTbl(emulsNames, "emulsSlct", "", false);
+// 	String saltsSlctTable = dataMgr.getIngSlctTbl(saltsNames, "saltsSlct", "", false);
+// 	String stabsSlctTable = dataMgr.getIngSlctTbl(stabsNames, "stabsSlct", "", false);
+// 	String swtsSlctTable = dataMgr.getIngSlctTbl(sweetsNames, "sweetsSlct", "", false);
+	
+	String flavsSlctTable = "under construction";
+	String dairySlctTable = "under construction";
+	String emulsSlctTable = "under construction";
+	String saltsSlctTable = "under construction";
+	String stabsSlctTable = "under construction";
+	String swtsSlctTable = "under construction";
+
+	String ckMthdMnuName = "cookMethodSlct";
+	String ckMthdMnuId = "cookMethodSlct";
+	String ckMthdMnu = dataMgr.getSlctMnu(ckMthdMnuName, ckMthdMnuId, "", ckMthdIdx, false);
+	
+	boolean filtered = vMsg != null && !vMsg.isEmpty() ? true : false;
+	String rcpSlctMnu = dataMgr.getRcpSlctMnu("recipeByName", 
+			                                 "if(recipeByName.selectedIndex == 0) return false;" +
+	                                         "displayRecipe(recipeByName.options[selectedIndex].value);" +
+			                                 "recipeByName.selectedIndex = 0;" +
+	                                         "document.activeElement.blur()",
+	                                         filtered);
+
+%>
+

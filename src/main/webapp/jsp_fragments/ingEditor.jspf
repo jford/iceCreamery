@@ -1,0 +1,65 @@
+<%
+	String ingName = request.getParameter("ingName");
+	ingName = ingName == null ? "ingredient" : ingName;
+	
+	String ingType = request.getParameter("ingType");
+	ingType = ingType == null ? "" : ingType;
+	
+	String ingCategory = request.getParameter("ingCategory");
+	ingCategory = ingCategory == null ? "" : ingCategory;
+	
+	String ingId = request.getParameter("ingId");
+	ingId = ingId == null ? "" : ingId;
+	
+	String ingSlctIdx = request.getParameter("ingSlctIdx");
+	ingSlctIdx = ingSlctIdx == null ? "0" : ingSlctIdx; 
+	
+	mode = request.getParameter("mode");
+	mode = mode == null ? "" : mode;
+	
+	String pageName = !ingCategory.isEmpty() ? ingCategory : "Ingredient";
+	String ingCategorySingular = "";
+	
+	String asterisk1 = "<span class=\"asterisk\">*</span>";
+	String asterisk2 = "<span class=\"asterisk\">**</span>";
+	String asterisk3 = "<span class=\"asterisk\">***</span>";
+	
+	int idx = 0;
+	if(ingCategory.endsWith("(s)"))
+	{
+		ingCategorySingular = ingCategory.substring(0, ingCategory.length() - 3);
+	}
+	else if(ingCategory.endsWith("s"))
+		ingCategorySingular = ingCategory.substring(0, ingCategory.length() - 1);
+	
+	String selectName = "ingSlct";
+	String selectId = selectName;
+	String onchange = "showHideEditInputsDiv('show');document.editIngsForm.submit()";
+//	String onchange = "showHideEditInputsDiv('show');document.location='../ingGetText";
+	String ingSlct = dataMgr.getSlctMnu(selectName, 
+			                            selectId, 
+			                            ingType, 
+			                            onchange, 
+			                            Integer.parseInt(ingSlctIdx), false);
+	String newIngTypesRdoBtns = dataMgr.getNewIngTypesRdoBtns();
+	String srchTerm = "<option";
+	int numOptions = 0;
+	idx = 0;
+	int end = 0;
+	while((idx = ingSlct.indexOf(srchTerm, end)) != -1)
+	{
+		end = idx + srchTerm.length();
+		numOptions++;
+	}
+	if(numOptions < 2)
+	{
+		ingSlct = "<p class=" + ingType + "SlctMnuEmpty\" " + 
+	                      "id=" + ingType + "SlctMnuEmpty\" />No " + ingType + " items have been defined.";
+	}
+	
+	String splrTbl = dataMgr.getSplrTbl(ingId, 	true);
+	String splrsMnu = dataMgr.getSplrsMnu("splrsSlct");
+	
+	
+	String formSbmtSrc = "";
+%>

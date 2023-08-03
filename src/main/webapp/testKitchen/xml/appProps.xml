@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iceCreamery>
+    <uiDisplay>
+    	<itemDefs>
+	       	<input type="submit" 
+	       	       name="" 
+	       	       id="">
+	            	<value>
+	            		<![CDATA[]]>
+	            	</value>
+	            	<label>
+	            		<value>
+							<![CDATA[]]>
+						</value>
+	            	</label>
+	        </input>
+	       	<button name="" 
+	       	        id="">
+	       			<value>
+	       				<![CDATA[]]>
+	       			</value>
+	            	<label>
+	            		<value>
+	            			<![CDATA[]]>
+	            		</value>
+	            	</label>
+	       	</button>
+	       	<textarea name="" 
+	       	          id="">
+			    	  <value> 
+			       		  <![CDATA[]]>
+			       	  </value>
+				          <label>
+				        	  <value>
+				        	  	  <![CDATA[]]>
+				        	  </value>
+				          </label>
+	       	</textarea>
+       	</itemDefs>	
+       	<xmlEditor>
+       	</xmlEditor>
+    </uiDisplay>
+</iceCreamery>

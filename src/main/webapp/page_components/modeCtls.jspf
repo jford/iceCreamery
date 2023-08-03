@@ -1,0 +1,8 @@
+		<div class="modeDiv">
+			<p>
+			<input type="radio" name="mode" id="modeAdd" value="add" <%= addBtnState %> onchange="clearMsgParam();toggleMode('add')">Add </input>
+			<input type="radio" name="mode" id="modeEdit" value="edit" <%= editBtnState %> onchange="toggleMode('edit')">Edit</input>
+			<input type="radio" name="mode" id="modeDelete" value="delete" <%= deleteBtnState %> onchange="toggleMode('delete')">Delete </input>
+			<input type="button" name="modeResetBtn" id="modeResetBtn" value="Reset" onclick="resetMode()"/>
+			</p>
+		</div><!-- end modeDiv -->
